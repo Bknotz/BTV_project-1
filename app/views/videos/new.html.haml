@@ -45,13 +45,16 @@
     %br/
     %br/
     .main{:align => "center"}
-      %div
-        %div{:style => "float:left"}
-          %div
-            This is where the video title will go
-          %div
-            this is where the username will go
-          %div
-            This is where the discription will go
-        %div{:style => "float:right"}
-          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "http://www.youtube.com/embed/hfiiWGWhB9g", :width => "560"}
+      .suggestlink{:align => "center", :style => "left:25%; width:600px;border-top:1px; position: absolute;  border:1px solid white;"}
+        %h1 User Submission
+        = form_tag videos_path do
+          = label :video, :title, 'Title'
+          = text_field :video, :title
+
+          = label :video, :description, 'Description' 
+          = text_field :video, :description
+          
+          = label :video, :url, 'URL' 
+          = text_field :video, :url
+          %br/
+          = submit_tag 'Submit'

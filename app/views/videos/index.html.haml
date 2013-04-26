@@ -44,16 +44,13 @@
     %br/
     %br/
     %br/
+    = link_to "Submit Your Own Videos", new_video_path
     .main{:align => "center"}
-      .usersubmission{:align => "center", :style => "left:25%; width:600px;border-top:1px; position: absolute;  border:1px solid white;"}
-        %h4 User submission
-        %hr/
-        %input{:placeholder => "User name", :type => "text"}/
-        %br/
-        %input{:placeholder => "Email adress", :type => "text"}/
-        %br/
-        %input{:placeholder => "Youtube URL", :type => "text"}/
-        %br/
-        %input{:placeholder => "Video description", :type => "text"}/
-        %br/
-        %input{:text => "submit video", :type => "submit"}/
+      %div
+        %div{:style => "float:left"}
+          %div
+            Title
+          %div
+            Description
+        %div{:style => "float:right"}
+          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "http://www.youtube.com/embed/hfiiWGWhB9g", :width => "560"}
