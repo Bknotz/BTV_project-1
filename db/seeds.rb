@@ -24,7 +24,11 @@ BoardInfo.create!(:user_id => user1.id, :title=> "Master Boss", :board => "produ
 
 # video to seed DB for submit page
 
-video1 = Video.new!(:title => "Beyonce as Mrs. Carter on H&M", :description => "beyonce as mrs. carter", :url => "http://www.youtube.com/watch?v=ZcD4kPTPE2w", :created_at => "sometime", :updated_at => "another time")
+video1 = Video.create!(:title => "Beyonce as Mrs. Carter on H&M", 
+                       :description => "beyonce as mrs. carter", 
+                       :url => "http://www.youtube.com/watch?v=ZcD4kPTPE2w",
+                       :created_at => "sometime", 
+                       :updated_at => "another time")
 
 
 

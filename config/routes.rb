@@ -1,9 +1,7 @@
 BTVProject::Application.routes.draw do
   match "/board" => "board#index"
-
-  resources :videos
-
   resources :posts
+  resources :videos
 
 
   match "about" => "home#about"
