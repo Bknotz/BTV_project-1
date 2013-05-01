@@ -44,13 +44,11 @@
     %br/
     %br/
     %br/
-    = link_to "Submit Your Own Videos", new_video_path
     .main{:align => "center"}
       %div
-        %div{:style => "float:left"}
-          %div
-            Title
-          %div
-            Description
+        %div{:style => "float:left"} 
+          = link_to "Submit Your Own Videos", new_video_path
+          %div Title
+          %div Description
         %div{:style => "float:right"}
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "http://www.youtube.com/embed/hfiiWGWhB9g", :width => "560"}
