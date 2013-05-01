@@ -3,7 +3,6 @@ class VideosController < ApplicationController
   # GET /videos.json
   def index
     @videos = Video.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @videos }
@@ -14,8 +13,6 @@ class VideosController < ApplicationController
   # GET /videos/1.json
   def show
     @video = Video.find(params[:id])
-    p @video
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @video }
@@ -41,17 +38,19 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
-    @video = Video.new(params[:video])
-    redirect_to videos_path
-   # respond_to do |format|
-   #   if @video.save
-   #     format.html { redirect_to @video, notice: 'Video was successfully created.' }
-   #     format.json { render json: @video, status: :created, location: @video }
-   #   else
-   #     format.html { render action: "new" }
-   #     format.json { render json: @video.errors, status: :unprocessable_entity }
-   #   end
-   # end
+    @video = Video.create!(params[:video])
+    respond_to do |format|
+      if @video.save
+        format.html { redirect_to videos_path,
+          notice: 'Video was successfully created.' }
+        format.json { render json: @video, status: :created,
+          location: @video }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @video.errors,
+          status: :unprocessable_entity }
+      end
+    end
   end
 
   # PUT /videos/1
